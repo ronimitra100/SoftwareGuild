@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/mvc
+          http://www.springframework.org/schema/mvc/spring-mvc.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/aop  
+          http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+ 
+    <!-- Bean definitions go here -->
+    <bean id="userIO" class="com.swgcorp.flooringmastery.ui.UserIOConsoleImpl"/>
+   
+    <bean id="view" class="com.swgcorp.flooringmastery.ui.View">
+        <constructor-arg ref="userIO"/>
+    </bean>
+    
+    <context:property-placeholder location="classpath:Mode.properties" />
+    <bean id="modeConfig" class="com.swgcorp.flooringmastery.configuration.ModeConfiguration">
+        <property name="environment" value="${environment}"/>    
+    </bean>
+   
+    <bean id="orderDaoProd" 
+          class="com.swgcorp.flooringmastery.dao.OrderDaoProdImpl"/>
+    <bean id="orderDaoTraining" 
+          class="com.swgcorp.flooringmastery.dao.OrderDaoTrainingImpl"/>
+    
+    <bean id="productDao" 
+          class="com.swgcorp.flooringmastery.dao.ProductDaoImpl"/>
+    
+    <bean id="taxDao" 
+          class="com.swgcorp.flooringmastery.dao.StateTaxDaoImpl"/>
+   
+    <bean id="auditDao" 
+          class="com.swgcorp.flooringmastery.dao.AuditDaoImpl"/>
+    
+   
+    <bean id="serviceLayer" 
+          class="com.swgcorp.flooringmastery.service.ServiceLayerImpl">
+        <constructor-arg ref="#{modeConfig.environment=='Prod'?'orderDaoProd':'orderDaoTraining'}"/>
+        <constructor-arg ref="productDao"/>
+        <constructor-arg ref="taxDao"/>
+        <constructor-arg ref="auditDao"/>           
+    </bean>
+   
+    <bean id="controller" 
+          class="com.swgcorp.flooringmastery.controller.Controller">
+        <constructor-arg ref="serviceLayer"/>
+        <constructor-arg ref="view"/>
+    </bean>
+    
+    <bean id="loggingAdvice" class="com.swgcorp.flooringmastery.advice.LoggingAdvice">
+        <constructor-arg ref="auditDao"/>
+    </bean>
+    
+    <aop:config>
+        <aop:aspect ref="loggingAdvice">
+            <aop:after-returning
+                method="createAuditEntryUponSuccessfulOrderCreation"
+                pointcut="execution(* com.swgcorp.flooringmastery.service.ServiceLayerImpl.addOrder(..))"
+                returning = "returnValue"
+            />
+            <aop:after-returning
+                method="createAuditEntryUponSuccessfulOrderUpdate"
+                pointcut="execution(* com.swgcorp.flooringmastery.service.ServiceLayerImpl.editOrder(..))"
+                returning = "returnValue"
+            />
+            <aop:after-returning
+                method="createAuditEntryUponSuccessfulOrderRemoval"
+                pointcut="execution(* com.swgcorp.flooringmastery.service.ServiceLayerImpl.removeOrder(..))"
+                returning = "returnValue"
+            />
+            <aop:after-returning
+                method="createAuditEntryUponSuccessfulDisplayOfListOfOrders"
+                pointcut="execution(* com.swgcorp.flooringmastery.service.ServiceLayerImpl.displayAllOrdersPlacedOnAGivenDate(..))"
+                returning = "returnValue"
+            />   
+            <aop:after-throwing
+                method="createAuditEntryUponFailureOfFlooringOperation"
+                pointcut="execution(* com.swgcorp.flooringmastery.service.ServiceLayer.*(..))"
+                throwing = "e"
+            />          
+        </aop:aspect>
+    </aop:config>
+   
+</beans>

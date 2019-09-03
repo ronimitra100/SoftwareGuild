@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>My Weather</title>
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+   <div class="container">
+      <div class="row text-center">
+         <h1>Weather Page</h1>
+         <hr>
+      </div>
+      <ul class="list-group" id="errorMessages"></ul>
+      <div class="row text-center" id="weather-form-row">
+         <form class="form-inline">
+            <div class="form-group">
+               <label for="zipcode">Zipcode</label>
+               <input type="text" class="form-control" id="zipcode" placeholder="Enter Zipcode" required>
+            </div>
+            <div class="form-group">
+               <label for="units">Units</label>
+               <select class="custom-select form-control" size="1" id="units">
+                  <option value="Imperial" selected>Imperial</option>
+                  <option value="Metric">Metric</option>
+               </select>
+            </div>
+            <button type="submit" class="btn btn-default" id="get-weather-button">Get Weather</button>
+         </form>
+      </div>
+      
+      <div id="current-weather-row">
+
+         <h1 id="current-weather-heading">Current Conditions in Akron</h1>
+         
+         <div class="container">
+          <div class="row">
+           <div class="col-md-3">
+            <img src="http://openweathermap.org/img/w/01n.png"> Haze: haze
+         </div>
+         <div class="col-md-3">
+            <ul style="list-style: none">
+               <li>Temperature: 76.77 F</li>
+               <li>Humidity: 61%</li>
+               <li>Wind: 3.38 miles/hour</li>
+            </ul>
+         </div>
+      </div>
+   
+   </div>
+
+   <div id="weather-forecast-row" >
+
+         <h1>Five Day Forecast</h1>
+         
+         <div class="container">
+
+          <div class="row">
+           <div class="col-xs-2">
+            <ul style="list-style: none; text-align: center">
+               <li>3 August</li>
+               <li><img src="http://openweathermap.org/img/w/01n.png">Clear</li>
+               <li>H 90.12F L 73.76</li>
+            </ul>
+         </div>
+         
+           <div class="col-xs-2">
+            <ul style="list-style: none; text-align: center">
+               <li>4 August</li>
+               <li><img src="http://openweathermap.org/img/w/01n.png">Clear</li>
+               <li>H 90.12F L 73.76</li>
+            </ul>
+         </div>
+         
+         
+           <div class="col-xs-2">
+            <ul style="list-style: none; text-align: center">
+               <li>5 August</li>
+               <li><img src="http://openweathermap.org/img/w/01n.png">Clear</li>
+               <li>H 90.12F L 73.76</li>
+            </ul>
+         </div>
+         
+           <div class="col-xs-2">
+            <ul style="list-style: none; text-align: center">
+               <li>6 August</li>
+               <li><img src="http://openweathermap.org/img/w/01n.png">Clear</li>
+               <li>H 90.12F L 73.76</li>
+            </ul>
+         </div>
+         
+           <div class="col-xs-2">
+            <ul style="list-style: none; text-align: center">
+               <li>7 August</li>
+               <li><img src="http://openweathermap.org/img/w/01n.png">Clear</li>
+               <li>H 90.12F L 73.76</li>
+            </ul>
+         </div>
+         
+      </div>
+
+   </div>
+   </div>
+</div>
+</div>s
+
+      <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+      <script type="text/javascript" src="js/openWeatherMap.js"></script>
+   </body>
+   </html>

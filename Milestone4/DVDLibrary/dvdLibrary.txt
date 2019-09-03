@@ -1,0 +1,3 @@
+Lion King::1994::9.75::Rob Minkoff::Disney::9.8
+Jurassic Park::1993::8.1::Steven Spielberg::Universal Studio::8.7
+The Kingdom of Solomon::2010::6.6::Shahriar Bahrani::KPS film::9.2

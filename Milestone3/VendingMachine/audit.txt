@@ -1,0 +1,5 @@
+2018-11-11T00:46:07.711 : Item with ID 100101 and name Chocolate Drink was vended at 2018-11-11T00:46:07.629
+2018-11-11T00:46:27.572 : Item with ID 100101 and name Chocolate Drink was vended at 2018-11-11T00:46:27.571
+2018-11-11T00:47:20.981 : Item with ID 100101 and name Chocolate Drink was vended at 2018-11-11T00:47:20.980
+2018-11-11T00:48:36.404 : Item with ID 100101 and name Chocolate Drink was vended at 2018-11-11T00:48:36.402
+2018-11-11T00:51:07.160 : Item with ID 100101 and name Chocolate Drink was vended at 2018-11-11T00:51:07.087

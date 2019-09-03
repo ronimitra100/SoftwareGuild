@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Vending Machine</title>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    
+   </head>
+   <body>
+      <div class="container">
+         <div  style="text-align:center;">
+            <h1 class="h1">Vending Machine</h1>
+            <hr/>
+            <div class="container-fluid">
+               <div class="row">
+
+                  <div  class="col-md-8 col-md-70">
+                     <div class="row" id="item-list">
+                        
+                        
+                     </div>
+                  </div>
+
+                  <div id="user-interaction-forms" class="col-md-4 col-md-30">
+                     <form id="make-a-deposit-form">
+                        <h3>Total $ In</h3>
+                        <div><input id="deposit" type="number" readonly></div>
+                        <div class="row">
+                           <div class="col col-md-6"><button type="button" id="add-dollar-button">Add Dollar</button></div>
+                           <div class="col col-md-6"><button type="button" id="add-quarter-button">Add Quarter</button></div>
+                        </div>
+                        <div class="row">
+                           <div class="col col-md-6"><button type="button" id="add-dime-button">Add Dime</button></div>
+                           <div class="col col-md-6"><button type="button" id="add-nickel-button">Add Nickel</button></div>
+                        </div>
+                        <hr/>
+                     </form>
+                     
+                     <form id="make-purchase-form">
+                        <h3>Messages</h3>
+                        <div><input id="message" type="text" readonly></div>
+                        <div class="row">
+                           <div class="col"><label>Item:</label></div>
+                           <div class="col"><input id="item-id" type="text"></div>
+                        </div>
+                        <div class="row">
+                           <div class="col"><button id="make-purchase-button">Make Purchase</button></div>
+                        </div>
+                        <hr/>
+                     </form>
+                     <form id="get-change-form">
+                        <h3>Change</h3>
+                        <div><input id="change" type="text" readonly></div>
+                        <div class="col"><button id="return-change-button">Return Change</button></div>
+                        <hr/>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+     
+      <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="js/home.js"></script>
+   </body>
+</html>

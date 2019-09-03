@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Joe Schmoe's Portfolio</title>
+    <style type="text/css">
+        table, th, td {
+            border : 1px solid #292533;
+            padding : 5px 10px 5px 10px;
+            border-spacing : 2px 5px;
+        }
+
+        table {
+            width : 100%;
+        }
+
+        td, th {
+            height : 30px;
+        }
+
+        th{
+            background-color: #5b7d87;
+            color: white;
+        }
+
+        tr:nth-child(odd){
+            background-color: #d5d2cb;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1>Portfolio for Joe Schmoe</h1>
+    </div>
+    <div id="navigation">
+        <hr style="border-top:3px double #8c8b8b"/>
+        <!--Links needed are projects.html, contactMe.html and testimonials.html.-->
+        <p>
+            <a href="portfolio.html" target="_blank">Portfolio</a>
+            <a href="contactMe.html" target="_blank">Contact Me</a>
+            <a href="testimonials.html" target="_blank">Testimonials</a>
+        </p>
+        <hr style+"border-top:3px double #8c8b8b/>
+    </div>
+
+    <div id="aboutMe">
+        <div class="image">
+            <img src="images/lion.jpg" alt="Photograph of a male lion">
+        </div>
+        <div class="content">
+            <h2><em>About Me</em></h2>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+                pretium quis, sem.</p>
+            <p>Barbary Coast tackle pink run a rig lass black spot Letter of Marque rigging gun swing the lead. Cog fire ship walk the plank plunder skysail gabion me lass chase guns snow. Starboard ye coffer mizzenmast poop deck landlubber or just lubber
+                swab flogging lee spyglass.</p>
+        </div>
+
+        <div id="experiences">
+            <div class="image">
+                <img src="images/freerider.jpg" alt="Photograph of a skier on a snowy slope">
+            </div>
+            <div class="content">
+                <h2><em>Past Experiences</em></h2>
+                <table>
+                    <caption>Employment History</caption>
+                    <tr>
+                        <th>Year</th>
+                        <th>Title</th>
+                        <th>Company</th>
+                    </tr>
+                    <tr>
+                        <td>Current</td>
+                        <td>Apprentice</td>
+                        <td>The Software Guild</td>
+                    </tr>
+                    <tr>
+                        <td>2012-2017</td>
+                        <td>Clerk</td>
+                        <td>LostYourMail Shipping</td>
+                    </tr>
+                    <tr>
+                        <td>2000-2012</td>
+                        <td>Sudent</td>
+                        <td>University of Schmoe</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="hobbies">
+            <div class="image">
+                <img src="images/beach.jpg" alt="Photo of a grouping of chairs and cooolers on a sandy beach near an ocean.">
+                <p><a href="https://flic.kr/p/aiGiQi">Photo by RichardBH</a>, available by <a href="https://creativecommons.org/licenses/by/2.0/">CC BY SA-2.0</a></p>
+            </div>
+            <div class="content">
+                <h2><em>Hobbies</em></h2>
+                <ul>
+                    <li>Reading</li>
+                    <ol>
+                        <li>Stephen King</li>
+                        <li>Jim Butcher</li>
+                        <li>Robin Hobb</li>
+                    </ol>
+                    <li>For Runs!</li>
+                    <ol>
+                        <li>The Color Run</li>
+                        <li>Run for Your Lives</li>
+                        <li>Rugged Maniac</li>
+                    </ol>
+                    <li>Ski Slopes</li>
+                    <ul>
+                        <li>Snowmass, Colorado</li>
+                        <li>Taos, New Mexico</li>
+                        <li>Okemo, Vermont</li>
+                    </ul>
+                    <li>Virtual Running Groups</li>
+                    <ul>
+                        <li>Hogwarts Running Club</li>
+                        <li>Whovian Running Club</li>
+                        <li>Virtual Pace Series</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <hr/>
+        <footer>
+            <p>&copy; 2136 Joe Schmoe</p>
+            <p><a href="https://thesoftwareguild.com">The Software Guild</a></p>
+        </footer>
+    </div>
+</body>

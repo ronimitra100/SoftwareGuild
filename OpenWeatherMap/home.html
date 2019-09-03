@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>My Weather</title>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+   </head>
+   <body>
+      <div class="container">
+         <div class="row text-center">
+            <h1>Weather Page</h1>
+            <hr>
+         </div>
+         <ul class="list-group" id="errorMessages"></ul>
+         <div class="row text-center" id="weather-form-row">
+            <form class="form-inline">
+               <div class="form-group">
+                  <label for="zipcode">Zipcode</label>
+                  <input type="text" class="form-control" id="zipcode" placeholder="Enter Zipcode" required>
+               </div>
+               <div class="form-group">
+                  <label for="units">Units</label>
+                  <select class="custom-select form-control" size="1" id="units">
+                     <option value="Imperial" selected>Imperial</option>
+                     <option value="Metric">Metric</option>
+                  </select>
+               </div>
+               <button type="submit" class="btn btn-default" id="get-weather-button">Get Weather</button>
+            </form>
+         </div>
+         <div id="weatherInfo" style="display:none">
+            <div id="current-weather-row">
+               <h1 id="current-weather-heading">Current Conditions in </h1>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-3" id="currentWeatherSummary">
+
+                     </div>
+                     <div class="col-md-3" id="currentWeatherDetails">
+                     </div>
+                  </div>
+                  <div>
+                     <div id="weather-forecast-row" >
+                        <h1>Five Day Forecast</h1>
+                        <div class="container">
+                           <div class="row" id="weatherDataForNext5Days">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+      <script type="text/javascript" src="js/home.js"></script>
+   </body>
+</html>

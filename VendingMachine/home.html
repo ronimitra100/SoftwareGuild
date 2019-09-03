@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Vending Machine</title>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+   </head>
+   <body>
+      <div class="container">
+         <div  style="text-align:center;">
+            <h1 class="h1">Vending Machine</h1>
+            <hr/>
+            <div class="container-fluid">
+               <div class="row">
+                  <div  class="col-md-8 col-md-70">
+                     <div class="row" id="item-list">
+                     </div>
+                  </div>
+                  <div id="user-interaction-forms" class="col-md-4 col-md-30">
+                     <form id="make-a-deposit-form" class="form-horizontal">
+                        <div class="form-group">
+                           <div class="col-md-8 col-lg-offset-2" style="float:center;">
+                              <h3><label for="deposit" >Total $ In</label></h3>
+                              <input  class="form-control" id="deposit" readonly>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="form-group">
+                              <button type="button" id="add-dollar-button" class="btn btn-primary btn-lg" style="float:left;">Add Dollar
+                              </button>
+                              <button type="button" id="add-quarter-button" class="btn btn-primary btn-lg" style="float:right;">Add Quarter
+                              </button>
+                           </div>
+                           <div class="form-group">
+                              <button type="button" id="add-dime-button" class="btn btn-primary btn-lg" style="float:left;">Add Dime
+                              </button>
+                              <button type="button" id="add-nickel-button" class="btn btn-primary btn-lg" style="float:right;">Add Nickel
+                              </button>
+                           </div>
+                        </div>
+                        <hr/>
+                     </form>
+                     <form id="make-purchase-form"  class='form-horizontal'>
+                        <div class="form-group">
+                           <h3><label for="message">Messages</label></h3>
+                           <input  class="form-control" id="message" readonly>
+                        </div>
+                        <div class="form-group">
+                           <label for="item-id" class="col-md-4 control-label" style="font-size:150%">
+                           Item:
+                           </label>
+                           <div class="col-md-8">
+                              <input type="text" class="form-control" id="item-id">
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <button type="button" id="make-purchase-button" class="btn btn-primary btn-lg" style="float:center;">Make Purchase
+                           </button>
+                        </div>
+                        <hr/>
+                     </form>
+                     <form id="get-change-form"  class='form-horizontal'>
+                        <div class="form-group">
+                           <h3><label for="change">Change</label></h3>
+                           <input  class="form-control" id="change" readonly>
+                        </div>
+                        <div class="form-group">
+                           <button type="button" id="return-change-button" class="btn btn-primary btn-lg" style="float:center;">Return Change
+                           </button>
+                        </div>
+                        <hr/>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+      <script type="text/javascript" src="js/home.js"></script>
+   </body>
+</html>

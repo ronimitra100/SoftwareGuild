@@ -1,0 +1,73 @@
+.item-box{
+    width:100%;
+    height:0;
+    padding-bottom:100%;
+    border-style:solid; 
+    background-color: lightblue;
+    color: black;
+    float:right;
+   
+
+}
+
+.item-border{
+    padding:2%;
+    
+}
+
+.zoomed-and-centered{
+    zoom:0.7; 
+    -moz-transform: scale(0.7);
+    text-align:center;
+}
+
+.bolded{
+    font-weight:bold;
+}
+
+.centered{
+     text-align:center;
+}
+
+hr{
+    height:1px;
+    border:none;
+    background-color:#333;
+}
+
+#change-box{
+    height:80px;
+    width:70%;
+    text-align:center;
+}
+
+.left-button{
+    float:left;
+    width:40%;
+    font-weight:bold;
+}
+
+.right-button{
+    float:right;
+    width:40%;
+    font-weight:bold;
+}
+
+.middle-button{
+    width: 70%;
+    height:40px;
+    font-size:150%;
+    font-weight:bold;
+}
+
+.enlarged-font{
+    font-size:150%;
+}
+
+#message-box{
+    height:50px;
+    text-align:center;
+}
+
+
+
